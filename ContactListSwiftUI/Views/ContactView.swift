@@ -1,15 +1,15 @@
 import SwiftUI
 
 struct ContactView: View {
-    let contact: User
+    let contact: Contact
     
     var body: some View {
         HStack {
-            Text(contact.fullname)
+            Text("\(contact.name) \(contact.surname)")
         }
     }
 }
 
 #Preview {
-    ContactView(contact: UserData.getUser())
+    ContactView(contact: ContactData.getContact())
 }
