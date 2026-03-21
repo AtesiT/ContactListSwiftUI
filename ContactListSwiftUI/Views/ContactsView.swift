@@ -2,8 +2,12 @@ import SwiftUI
             
 struct ContactsView: View {
     var body: some View {
-        List(contacts, id: \.self) { contact in
-            Text("\(contact.name) \(contact.surname)")
+        NavigationView {
+            List(contacts, id: \.self) { contact in
+                NavigationLink(destination: ContactDetailsView(title: "\(contact.name) \(contact.surname)", contact: contact)) {
+                    ContactView(contact: contact)
+                }
+            }
         }
     }
 }
