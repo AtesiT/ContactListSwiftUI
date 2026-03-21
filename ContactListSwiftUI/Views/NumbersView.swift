@@ -2,7 +2,9 @@ import SwiftUI
 
 struct NumbersView: View {
     var body: some View {
-        Text("Numbers")
+        List(contacts, id: \.self) { contact in
+            NumbersDetailsView(contact: contact)
+        }
     }
 }
 
