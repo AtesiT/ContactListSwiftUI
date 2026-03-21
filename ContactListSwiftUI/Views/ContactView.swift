@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContactView: View {
-    let contact: User = UserData.getUser()
+    let contact: User
     
     var body: some View {
         HStack {
@@ -11,5 +11,5 @@ struct ContactView: View {
 }
 
 #Preview {
-    ContactView()
+    ContactView(contact: UserData.getUser())
 }
