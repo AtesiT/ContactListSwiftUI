@@ -1,6 +1,8 @@
 import SwiftUI
             
 struct ContactsView: View {
+    @Binding var contacts: [Contact]
+    
     var body: some View {
         NavigationView {
             List(contacts, id: \.self) { contact in
@@ -8,10 +10,11 @@ struct ContactsView: View {
                     ContactView(contact: contact)
                 }
             }
+            .listStyle(.plain)
         }
     }
 }
 
 #Preview {
-    ContactsView()
+    ContactsView(contacts: .constant([ContactData.getContact()]))
 }
