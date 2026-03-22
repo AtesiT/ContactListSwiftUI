@@ -10,6 +10,7 @@ struct ContactsView: View {
                     ContactView(contact: contact)
                 }
             }
+            .navigationTitle(Text("Contact List"))
             .listStyle(.plain)
         }
     }

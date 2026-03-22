@@ -7,11 +7,23 @@ struct NumbersDetailsView: View {
         Section(header: Text("\(contact.name) \(contact.surname)")) {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    Label("\(contact.phone)", systemImage: "phone")
+                    Label {
+                        Text("\(contact.name)")
+                            .foregroundStyle(.primary)
+                    } icon: {
+                        Image(systemName: "phone")
+                            .foregroundStyle(.blue)
+                    }
                 }
                 Divider()
                 HStack {
-                    Label("\(contact.email)", systemImage: "tray")
+                    Label {
+                        Text("\(contact.email)")
+                            .foregroundStyle(.primary)
+                    } icon: {
+                        Image(systemName: "tray")
+                            .foregroundStyle(.blue)
+                    }
                 }
             }
         }

@@ -9,14 +9,25 @@ struct ContactDetailsView: View {
             Image(systemName: "person.fill")
                 .resizable()
                 .frame(width: 150, height: 150)
+                .padding()
             VStack(alignment: .leading) {
                 Divider()
                 HStack(alignment: .top) {
-                    Label("\(contact.phone)", systemImage: "phone")
+                    Label {
+                        Text("\(contact.phone)")
+                    } icon: {
+                        Image(systemName: "phone")
+                            .foregroundStyle(.blue)
+                    }
                 }
                 Divider()
                 HStack(alignment: .top) {
-                    Label("\(contact.email)", systemImage: "tray")
+                    Label {
+                        Text("\(contact.email)")
+                    } icon: {
+                        Image(systemName: "tray")
+                            .foregroundStyle(.blue)
+                    }
                 }
             }
             Spacer()
